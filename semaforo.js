@@ -17,35 +17,35 @@ function ligarAmarelo(){
 function ligarVerde(){
     semaforo.src ="img/verde.png"
 }
-function verificaCor(){
-    const ligarVermelho = document.getElementById("vermelho")
-    return ligarAmarelo()
- 
+function verificaCorVerm(){
+    return semaforo.src.includes("vermelho")
+  
+
+
 }
 
 
 function verificaCorAma(){
-    const ligarAmarelo= document.getElementById("amarelo")
-    return ligarVerde()
+    return semaforo.src.includes("amarelo")  
 }
 
 
 function verificaCorVer(){
-    const ligarVerde= document.getElementById("verde")
-    return setInterval(idInterval)
+    return semaforo.src.includes("verde")
 }
 
 
 
+
 function automatico(){
-    if(ligarVermelho()){
-    }else{ligarVerde()
-       ligarAmarelo()
+    if(verificaCorVerm()){
+        ligarAmarelo()
 
-
-    } 
-   
-    return setInterval(idInterval)
+    }else if (verificaCorAma()){
+        ligarVerde()
+    }else if (verificaCorVer()){
+        ligarVermelho()
+    }
     
 
 }
@@ -53,7 +53,7 @@ function automatico(){
 
 
 function trocaAuto(){
-    idInterval = setInterval (automatico, 5000)
+    idInterval = setInterval (automatico, 1000)
 }
 
 
